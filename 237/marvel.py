@@ -55,16 +55,15 @@ def max_and_min_years_new_characters():
        use either the 'FIRST APPEARANCE' or 'Year' column in the csv data, or
        the 'year' attribute of the namedtuple, return a tuple of
        (max_year, min_year)"""
-    appereance_year = Counter([character.year for character in data if character.year])
-    max_year = appereance_year.most_common(1)[0][0]
-    min_year = appereance_year.most_common()[-1][0]
-    return (max_year, min_year)
+    appearances_per_year = Counter([character.year for character in data if character.year])  # Filter None
+    max_year = appearances_per_year.most_common(1)[0][0]
+    min_year = appearances_per_year.most_common()[-1][0]
+    return max_year, min_year
 
 
 def percentage_female():
     """Get the percentage of female characters as percentage of all genders,
        return a percentage rounded to 2 digits"""
-    gender_count = Counter([character.sex for character in data if character.sex])
-    total_count = len(data)
-    female_percent = (gender_count["Female Characters"] / total_count) * 100
-    return round(female_percent, 2)
+    gender_count = Counter([character.sex for character in data])
+    female_ratio = gender_count["Female Characters"] / sum(gender_count.values())
+    return round(female_ratio * 100, 2)
