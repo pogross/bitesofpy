@@ -3,7 +3,7 @@
 
 Find the exercises at https://codechalleng.es/bites/
 
-##Linting & Formatting
+## Linting & Formatting
 - [Black](https://github.com/python/black)
 - [Flake8](https://pypi.org/project/flake8/)
 - [Flake8-mypy](flake8-mypy)
