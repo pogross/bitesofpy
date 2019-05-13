@@ -107,3 +107,4 @@ venv.bak/
 git.txt
 tmp
 .vscode
+.idea
