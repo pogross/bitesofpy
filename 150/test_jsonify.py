@@ -62,4 +62,3 @@ def test_extracted_data_is_correct(output):
         },
     ]:
         assert row in data, f"{row} not in output of convert_to_json"
-
