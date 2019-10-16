@@ -1,0 +1,4 @@
+<p>In this Bite you will convert Unix' <code>wc</code> command into Python. Your function takes a file (absolute path), reads it in and calculates the lines/words/chars. It returns a string of these numbers and the filename, like as a typical <code>wc</code> output, for example:<pre>
+$ wc wc.py
+      13      56     514 wc.py
+</pre></p><p>Don't worry about the amount of white space between the columns, you can use tabs or spaces.</p><p>Unix files add an extra newline to the end, you don't have to make that assumption here, so 'Hello\nworld' == 11 chars not 12 as Unix' <code>wc</code> would return. Let's keep it simple. Do note that newline (\n) counts as a char.</p><p>See the tests for more info. Thanks <a href="https://testandcode.com/" target="_blank">Brian</a> for introducing us to <code>pytest</code>'s <code>tmp_path</code> fixture!</p><p>Have fun and keep coding in Python!</p>
