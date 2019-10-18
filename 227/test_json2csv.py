@@ -126,7 +126,7 @@ def test_json2csv(file_no, expected, exception, capfd):
 
         with pytest.raises(JSONDecodeError) as exc:
             convert_to_csv(mount_json)
-        assert "Invalid control character" in str(exc)
+            assert "Invalid control character" in str(exc)
 
         # testing you actually caught the exception!
         output = capfd.readouterr()[0].strip()
