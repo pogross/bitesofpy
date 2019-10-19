@@ -28,7 +28,9 @@ def get_us_bank_holidays(content=content):
     for row in rows:
         cols = row.find_all("td")
         date = datetime.strptime(cols[1].time.attrs["datetime"], "%Y-%m-%d")
-        holiday = cols[3].text.lstrip()[:-1]  # just an odd workaround for the whitespaces :\
+        holiday = cols[3].text.lstrip()[
+            :-1
+        ]  # just an odd workaround for the whitespaces :\
 
         holidays[str(date.month).zfill(2)].append(holiday)
 

@@ -19,7 +19,15 @@ jdoe:*:202:1:John Doe:/home/jdoe:/usr/bin/ksh"""
 
 def test_get_users_for_shell_default_args():
     actual = get_users_for_shell()
-    expected = ["artagnon", "avar", "chad", "gerrit2", "git-svn-mirror", "root", "ssh-rsa"]
+    expected = [
+        "artagnon",
+        "avar",
+        "chad",
+        "gerrit2",
+        "git-svn-mirror",
+        "root",
+        "ssh-rsa",
+    ]
     assert sorted(actual) == expected
 
 
@@ -49,7 +57,15 @@ def test_get_users_for_sh_shell():
 
 def test_get_users_for_false_shell():
     actual = get_users_for_shell(grep_shell="false")
-    expected = ["Debian-exim", "avahi", "ftp", "messagebus", "mysql", "postfix", "statd"]
+    expected = [
+        "Debian-exim",
+        "avahi",
+        "ftp",
+        "messagebus",
+        "mysql",
+        "postfix",
+        "statd",
+    ]
     assert sorted(actual) == expected
 
 

@@ -49,7 +49,9 @@ def group_by_genre(data=movie_excel_file):
     movies = movies[movies.genres != "(no genres listed)"]
     genre_count = movies.groupby("genres").count()
     genres_sorted = (
-        genre_count.reset_index().sort_values("movie", ascending=False).set_index("genres")
+        genre_count.reset_index()
+        .sort_values("movie", ascending=False)
+        .set_index("genres")
     )
 
     return genres_sorted

@@ -31,4 +31,7 @@ def person_max_bmi(data=data):
     """Return (name, BMI float) of the character in data that
        has the highest BMI"""
     characters = [line.strip().split(",") for line in data.splitlines()]
-    return max([(character[0], bmi(character[1], character[2])) for character in characters], key=itemgetter(1))
+    return max(
+        [(character[0], bmi(character[1], character[2])) for character in characters],
+        key=itemgetter(1),
+    )

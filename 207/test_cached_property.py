@@ -6,7 +6,7 @@ from cached_property import Planet
 
 @pytest.fixture(scope="module")
 def blue():
-    return Planet('blue')
+    return Planet("blue")
 
 
 def test_property_is_cached_timing(blue):
@@ -15,7 +15,7 @@ def test_property_is_cached_timing(blue):
         blue.mass
     end_time = perf_counter()
     elapsed_time = end_time - start_time
-    assert elapsed_time < .5
+    assert elapsed_time < 0.5
 
 
 def test_property_is_cached_value(blue):

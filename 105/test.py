@@ -11,12 +11,12 @@ finally return the results list!
 
 
 def test_slice_and_dice_default_text():
-    expected = ['objects', 'y', 'too', ':)', 'bites']
+    expected = ["objects", "y", "too", ":)", "bites"]
     assert slice_and_dice() == expected
 
 
 def test_slice_and_dice_other_text():
     # each line needs to be stripped, so the line starting with ' if'
     # is a match here, hence expected matches 'word' too
-    expected = ['word', 'list', 'list']
+    expected = ["word", "list", "list"]
     assert slice_and_dice(another_text) == expected

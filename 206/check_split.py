@@ -2,7 +2,9 @@ from typing import Tuple
 from decimal import Decimal, ROUND_DOWN
 
 
-def check_split(item_total: str, tax_rate: str, tip: str, people: int) -> Tuple[str, list]:
+def check_split(
+    item_total: str, tax_rate: str, tip: str, people: int
+) -> Tuple[str, list]:
     """Calculate check value and evenly split.
 
        :param item_total: str (e.g. '$8.68')

@@ -77,7 +77,9 @@ class Rankings:
         return sorted(self.ranking)[:count]
 
     def pair_up(self, count=3):
-        return [(high, low) for high, low in zip(self.highest(count), self.lowest(count))]
+        return [
+            (high, low) for high, low in zip(self.highest(count), self.lowest(count))
+        ]
 
     def __len__(self):
         return len(self.ranking)

@@ -1,5 +1,6 @@
 ALPHANUMERIC = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
+
 def get_index_different_char(chars: list) -> int:
     alpha_count = 0
     non_alpha_count = 0

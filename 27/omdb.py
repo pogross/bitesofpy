@@ -44,7 +44,9 @@ def get_movie_most_nominations(movies):
 
 
 def get_movie_longest_runtime(movies):
-    runtimes = [(movie["Title"], int(movie["Runtime"].strip(" min"))) for movie in movies]
+    runtimes = [
+        (movie["Title"], int(movie["Runtime"].strip(" min"))) for movie in movies
+    ]
     return max(runtimes, key=lambda x: x[1])[0]
 
 

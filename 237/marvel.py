@@ -55,7 +55,9 @@ def max_and_min_years_new_characters():
        use either the 'FIRST APPEARANCE' or 'Year' column in the csv data, or
        the 'year' attribute of the namedtuple, return a tuple of
        (max_year, min_year)"""
-    appearances_per_year = Counter([character.year for character in data if character.year])  # Filter None
+    appearances_per_year = Counter(
+        [character.year for character in data if character.year]
+    )  # Filter None
     max_year = appearances_per_year.most_common(1)[0][0]
     min_year = appearances_per_year.most_common()[-1][0]
     return max_year, min_year

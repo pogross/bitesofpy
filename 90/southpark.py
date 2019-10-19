@@ -24,5 +24,6 @@ def get_num_words_spoken_by_character_per_episode(content: str):
         character_words[row["Character"]][row["Episode"]] += len(row["Line"].split())
     return character_words
 
+
 if __name__ == "__main__":
     print(get_num_words_spoken_by_character_per_episode(get_season_csv_file(1)))

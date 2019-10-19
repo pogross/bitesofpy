@@ -15,7 +15,9 @@ def get_food_most_calories(df: pd.DataFrame = df):
     return max_caloires["Item"]
 
 
-def get_bodybuilder_friendly_foods(df: pd.DataFrame = df, excl_drinks: bool = False) -> List[str]:
+def get_bodybuilder_friendly_foods(
+    df: pd.DataFrame = df, excl_drinks: bool = False
+) -> List[str]:
     """Calulate the Protein/Calories ratio of foods and return the
        5 foods with the best ratio.
 
@@ -29,7 +31,8 @@ def get_bodybuilder_friendly_foods(df: pd.DataFrame = df, excl_drinks: bool = Fa
     filtered_df = df[df["Calories"] > 0].copy()
     if excl_drinks:
         filtered_df = filtered_df[
-            (filtered_df.Category != "Coffee & Tea") & (filtered_df.Category != "Beverages")
+            (filtered_df.Category != "Coffee & Tea")
+            & (filtered_df.Category != "Beverages")
         ]
 
     filtered_df["Ratio"] = filtered_df["Protein"] / filtered_df["Calories"]

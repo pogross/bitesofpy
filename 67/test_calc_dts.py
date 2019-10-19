@@ -1,4 +1,7 @@
-from calc_dts import get_hundred_days_end_date, get_days_between_pb_start_first_joint_pycon
+from calc_dts import (
+    get_hundred_days_end_date,
+    get_days_between_pb_start_first_joint_pycon,
+)
 
 
 def test_get_hundred_days_end_date():

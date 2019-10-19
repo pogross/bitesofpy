@@ -8,6 +8,8 @@ def get_mothers_day_date(year):
     c = calendar.Calendar(firstweekday=calendar.MONDAY)
 
     second_week = c.monthdatescalendar(year, 5)[1]  # must be in the second week
-    mothers_day = [day for day in second_week if day.weekday() == 6][0]  # find sunday in the first week
+    mothers_day = [day for day in second_week if day.weekday() == 6][
+        0
+    ]  # find sunday in the first week
 
     return date(year, 5, mothers_day.day)

@@ -20,7 +20,12 @@ def test_extracted_data_is_correct(output):
     assert type(data) == list
     assert len(data) == 10
     for row in [
-        {"id": "1", "first_name": "Junie", "last_name": "Kybert", "email": "jkybert0@army.mil"},
+        {
+            "id": "1",
+            "first_name": "Junie",
+            "last_name": "Kybert",
+            "email": "jkybert0@army.mil",
+        },
         {
             "id": "2",
             "first_name": "Sid",
@@ -39,9 +44,24 @@ def test_extracted_data_is_correct(output):
             "last_name": "Kleiser",
             "email": "mkleiser3@reference.com",
         },
-        {"id": "5", "first_name": "Umeko", "last_name": "Cray", "email": "ucray4@foxnews.com"},
-        {"id": "6", "first_name": "Jenifer", "last_name": "Dale", "email": "jdale@hubpages.com"},
-        {"id": "7", "first_name": "Deeanne", "last_name": "Gabbett", "email": "dgabbett6@ucoz.com"},
+        {
+            "id": "5",
+            "first_name": "Umeko",
+            "last_name": "Cray",
+            "email": "ucray4@foxnews.com",
+        },
+        {
+            "id": "6",
+            "first_name": "Jenifer",
+            "last_name": "Dale",
+            "email": "jdale@hubpages.com",
+        },
+        {
+            "id": "7",
+            "first_name": "Deeanne",
+            "last_name": "Gabbett",
+            "email": "dgabbett6@ucoz.com",
+        },
         {
             "id": "8",
             "first_name": "Hymie",

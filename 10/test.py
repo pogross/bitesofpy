@@ -16,7 +16,7 @@ def test_positive_divide_exceptions():
     except ZeroDivisionError:
         pytest.fail("Unexpected ZeroDivisionError!")
     with pytest.raises(TypeError):
-        positive_divide(1, 's')
+        positive_divide(1, "s")
         positive_divide([], 2)
     with pytest.raises(ValueError):
         positive_divide(1, -2)

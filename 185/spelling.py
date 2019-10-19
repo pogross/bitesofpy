@@ -20,6 +20,8 @@ def suggest_word(misspelled_word: str, words: set = None) -> str:
     if words is None:
         words = load_words()
 
-    likeness = [(word, SequenceMatcher(None, misspelled_word, word).ratio()) for word in words]
+    likeness = [
+        (word, SequenceMatcher(None, misspelled_word, word).ratio()) for word in words
+    ]
 
     return max(likeness, key=lambda x: x[1])[0]

@@ -14,7 +14,9 @@ def get_book():
 
     title = soup.find("div", attrs={"class": "dotd-title"}).text.strip()
     description = (
-        soup.find("div", attrs={"class": "dotd-main-book-summary"}).contents[7].text.strip()
+        soup.find("div", attrs={"class": "dotd-main-book-summary"})
+        .contents[7]
+        .text.strip()
     )
     img_link = soup.find("div", attrs={"class": "dotd-main-book-image"})
     img = img_link.img["src"].strip()

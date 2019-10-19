@@ -26,10 +26,14 @@ class Enchantment:
     description: str
     items: List[str]
 
-    def __init__(self, id_name=None, name=None, max_level=None, description=None, items=None):
+    def __init__(
+        self, id_name=None, name=None, max_level=None, description=None, items=None
+    ):
         self.id_name = id_name
         self.name = name
-        self.max_level = max_level if isinstance(max_level, int) else roman_to_int(max_level)
+        self.max_level = (
+            max_level if isinstance(max_level, int) else roman_to_int(max_level)
+        )
         self.description = description
 
         if not items:
@@ -69,7 +73,9 @@ class Item:
 
 
 # Source: https://codereview.stackexchange.com/questions/68297/convert-roman-to-int
-def roman_to_int(roman, values={"M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}):
+def roman_to_int(
+    roman, values={"M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}
+):
     """Convert from Roman numerals to an integer."""
     numbers = []
     for char in roman:
@@ -102,7 +108,9 @@ def generate_enchantments(soup: Soup) -> Dict[str, Enchantment]:
         max_level = cells[1].text.strip()
         description = cells[2].text.strip()
 
-        items_raw = re.search(r"images\/(.*)\.png", cells[4].img.get("data-src")).group(1)
+        items_raw = re.search(r"images\/(.*)\.png", cells[4].img.get("data-src")).group(
+            1
+        )
         items_clean = (
             items_raw.replace("enchanted", "")
             .replace("iron", "")
@@ -116,7 +124,9 @@ def generate_enchantments(soup: Soup) -> Dict[str, Enchantment]:
             if item is not ""
         ]
 
-        enchantments[id_name] = Enchantment(id_name, name, max_level, description, items)
+        enchantments[id_name] = Enchantment(
+            id_name, name, max_level, description, items
+        )
 
     return enchantments
 
@@ -128,7 +138,9 @@ def generate_items(data: dict) -> Dict[str, Item]:
     """
     items = dict()
 
-    for item in sorted(list({item for enchantment in data.values() for item in enchantment.items})):
+    for item in sorted(
+        list({item for enchantment in data.values() for item in enchantment.items})
+    ):
         item_enchantments = [
             enchantment for enchantment in data.values() if item in enchantment.items
         ]

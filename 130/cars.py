@@ -20,7 +20,11 @@ def most_prolific_automaker(year: int) -> str:
 def get_models(automaker: str, year: int) -> set:
     """Filter cars 'data' by 'automaker' and 'year',
        return a set of models (a 'set' to avoid duplicate models)"""
-    return {car["model"] for car in data if car["automaker"] == automaker and car["year"] == year}
+    return {
+        car["model"]
+        for car in data
+        if car["automaker"] == automaker and car["year"] == year
+    }
 
 
 if __name__ == "__main__":

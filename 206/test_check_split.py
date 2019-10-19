@@ -24,4 +24,3 @@ def test_check_split(args, expected):
     grand_total, splits = check_split(*args)
     assert grand_total == expected
     assert grand_total == f"${sum(splits)}"
-

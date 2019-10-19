@@ -85,7 +85,13 @@ def test_cleanup_text_alt_text(beer_tax):
 
 
 def test_word_metrics_gettysburg_default(getty):
-    expected = [("nation", 5), ("dedicated", 4), ("great", 3), ("cannot", 3), ("dead", 3)]
+    expected = [
+        ("nation", 5),
+        ("dedicated", 4),
+        ("great", 3),
+        ("cannot", 3),
+        ("dead", 3),
+    ]
     assert getty.metrics == expected
 
 

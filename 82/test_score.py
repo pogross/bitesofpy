@@ -2,7 +2,12 @@ from score import Score
 
 
 def test_enum_content():
-    assert list(Score) == [Score.BEGINNER, Score.INTERMEDIATE, Score.ADVANCED, Score.CHEATED]
+    assert list(Score) == [
+        Score.BEGINNER,
+        Score.INTERMEDIATE,
+        Score.ADVANCED,
+        Score.CHEATED,
+    ]
 
 
 def test_equality_comparison():

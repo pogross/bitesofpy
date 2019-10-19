@@ -19,7 +19,11 @@ expected_return = [
     ("Converting string into datetime", 1816),
     ("How to print without newline or space?", 1615),
     ("Select rows from a DataFrame based on " "values in a column in pandas", 1304),
-    ("Why does comparing strings using either '==' or 'is' " "sometimes produce a different result?", 1008),
+    (
+        "Why does comparing strings using either '==' or 'is' "
+        "sometimes produce a different result?",
+        1008,
+    ),
 ]
 
 

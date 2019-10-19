@@ -2,8 +2,8 @@ import pytest
 
 from account import Account
 
-checking = Account('Checking')
-saving = Account('Saving', 10)
+checking = Account("Checking")
+saving = Account("Saving", 10)
 
 
 def test_account_balance():
@@ -13,7 +13,7 @@ def test_account_balance():
 
     assert saving.start_balance == 10
     with pytest.raises(ValueError):
-        saving - 'a'
+        saving - "a"
     saving - 5
     assert saving.balance == 5
 
@@ -41,7 +41,7 @@ def test_account_indexing_iter():
 
 
 def test_account_str():
-    assert str(checking) == 'Checking account - balance: 15'
-    assert str(saving) == 'Saving account - balance: 10'
+    assert str(checking) == "Checking account - balance: 15"
+    assert str(saving) == "Saving account - balance: 10"
     saving + 5
-    assert str(saving) == 'Saving account - balance: 15'
+    assert str(saving) == "Saving account - balance: 15"

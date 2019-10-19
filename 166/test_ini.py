@@ -318,7 +318,17 @@ ini_files = (cookiecutter, django, oeuvre, pyramid)
         (
             pyramid,
             8,
-            ["coverage", "docs", "lint", "py34", "py35", "py36", "py36-cover", "py37", "pypy3"],
+            [
+                "coverage",
+                "docs",
+                "lint",
+                "py34",
+                "py35",
+                "py36",
+                "py36-cover",
+                "py37",
+                "pypy3",
+            ],
             ["python3.5", "python3.6"],
         ),
         (

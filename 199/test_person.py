@@ -26,19 +26,19 @@ def child():
 
 
 def test_string_repr_person(person):
-    assert str(person) == 'I am a person'
+    assert str(person) == "I am a person"
 
 
 def test_string_repr_dad(dad):
-    assert str(dad) == 'I am a person and cool daddy'
+    assert str(dad) == "I am a person and cool daddy"
 
 
 def test_string_repr_mom(mom):
-    assert str(mom) == 'I am a person and awesome mom'
+    assert str(mom) == "I am a person and awesome mom"
 
 
 def test_string_repr_child(child):
-    assert str(child) == 'I am the coolest kid'
+    assert str(child) == "I am the coolest kid"
 
 
 def test_mro_of_person():
@@ -81,7 +81,6 @@ def test_subclass_child():
 def test_use_inheritance():
     # dry code!
     # should not duplicate substr in subclass
-    substr = 'I am a person'
-    for src in (inspect.getsource(Father),
-                inspect.getsource(Mother)):
+    substr = "I am a person"
+    for src in (inspect.getsource(Father), inspect.getsource(Mother)):
         assert substr not in src

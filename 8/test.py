@@ -33,4 +33,3 @@ def test_rotation_of_n_bigger_than_string():
     # which is 100 % 15 (len string) => n=10
     mod = 100 % len(string)  # 10
     assert rotate(string, mod) in (expected_solution1, expected_solution2)
-

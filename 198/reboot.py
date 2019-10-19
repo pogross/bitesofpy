@@ -34,7 +34,10 @@ def calc_max_uptime(reboots: str = MAC1) -> tuple:
        but we use different outputs in the tests as well ...
     """
     reboot_times = re.findall(r"(?=[A-Z])(.*)(?![:1-9])", reboots)
-    reboot_dt = [datetime.strptime(f"{datetime.now().year} {reboot}", "%Y %a %b %d %H:%M") for reboot in reboot_times]
+    reboot_dt = [
+        datetime.strptime(f"{datetime.now().year} {reboot}", "%Y %a %b %d %H:%M")
+        for reboot in reboot_times
+    ]
 
     reboot_deltas = {}
     for curr_dt, next_dt in pairwise(reboot_dt):

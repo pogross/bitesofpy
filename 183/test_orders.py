@@ -1,7 +1,12 @@
 import pytest
 from pandas.core.frame import DataFrame
 
-from orders import load_excel_into_dataframe, get_year_region_breakdown, get_best_sales_rep, get_most_sold_item
+from orders import (
+    load_excel_into_dataframe,
+    get_year_region_breakdown,
+    get_best_sales_rep,
+    get_most_sold_item,
+)
 
 
 @pytest.fixture(scope="module")

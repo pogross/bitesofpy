@@ -1,6 +1,8 @@
 from mcdonalds import df, get_food_most_calories, get_bodybuilder_friendly_foods
 
-ASSERT_ERROR = "One or more expected foods not in " "get_bodybuilder_friendly_foods's return value"
+ASSERT_ERROR = (
+    "One or more expected foods not in " "get_bodybuilder_friendly_foods's return value"
+)
 
 
 def test_get_food_most_calories():

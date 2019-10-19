@@ -1,4 +1,8 @@
-from marvel import most_popular_characters, max_and_min_years_new_characters, percentage_female
+from marvel import (
+    most_popular_characters,
+    max_and_min_years_new_characters,
+    percentage_female,
+)
 
 
 def test_most_popular_characters():

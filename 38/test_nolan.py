@@ -10,7 +10,13 @@ def test_get_tree():
 
 
 def test_get_movies():
-    assert list(get_movies()) == ["The Prestige", "The Dark Knight", "The Dark Knight Rises", "Dunkirk", "Interstellar"]
+    assert list(get_movies()) == [
+        "The Prestige",
+        "The Dark Knight",
+        "The Dark Knight Rises",
+        "Dunkirk",
+        "Interstellar",
+    ]
 
 
 def test_get_movie_longest_runtime():

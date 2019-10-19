@@ -9,7 +9,9 @@ DATA_URL = "https://query.data.world/s/ezwk64ej624qyverrw6x7od7co7ftm"
 TMP = Path("tmp")
 DB = TMP / "nba.db"
 
-Player = namedtuple("Player", ("name year first_year team college active " "games avg_min avg_points"))
+Player = namedtuple(
+    "Player", ("name year first_year team college active " "games avg_min avg_points")
+)
 
 conn = sqlite3.connect(DB)
 cur = conn.cursor()
@@ -57,20 +59,26 @@ if DB.stat().st_size == 0:
 def player_with_max_points_per_game():
     """The player with highest average points per game (don't forget to CAST to
        numeric in your SQL query)"""
-    rs = cur.execute("SELECT name, max(CAST(avg_points as decimal)) FROM players ").fetchone()
+    rs = cur.execute(
+        "SELECT name, max(CAST(avg_points as decimal)) FROM players "
+    ).fetchone()
     return rs[0]
 
 
 def number_of_players_from_duke():
     """Return the number of players with college == Duke University"""
-    rs = cur.execute("SELECT name FROM players WHERE college == 'Duke University'").fetchall()
+    rs = cur.execute(
+        "SELECT name FROM players WHERE college == 'Duke University'"
+    ).fetchall()
     return len(rs)
 
 
 def avg_years_active_players_stanford():
     """Return the average years that players from "Stanford University
        are active ("active" column)"""
-    rs = cur.execute("SELECT avg(active) FROM players WHERE college == 'Stanford University'").fetchone()
+    rs = cur.execute(
+        "SELECT avg(active) FROM players WHERE college == 'Stanford University'"
+    ).fetchone()
     return rs[0]
 
 

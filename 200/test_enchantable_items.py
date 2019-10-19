@@ -1,6 +1,12 @@
 import pytest
 
-from enchantable_items import Enchantment, Item, generate_items, get_soup, generate_enchantments
+from enchantable_items import (
+    Enchantment,
+    Item,
+    generate_items,
+    get_soup,
+    generate_enchantments,
+)
 
 mock_html = """
 <table id="minecraft_items" class="std_table">
@@ -134,7 +140,12 @@ def test_enchantment_print(mock_data, capfd):
 
 @pytest.mark.parametrize(
     "enchant, expected",
-    [("aqua_affinity", 1), ("bane_of_arthropods", 5), ("blast_protection", 4), ("channeling", 1)],
+    [
+        ("aqua_affinity", 1),
+        ("bane_of_arthropods", 5),
+        ("blast_protection", 4),
+        ("channeling", 1),
+    ],
 )
 def test_roman_numeral_conversion(mock_data, enchant, expected):
     assert mock_data[enchant].max_level == expected
@@ -186,17 +197,34 @@ def test_gen_items_mocked(mocked_generate_items, item, expected):
         ),
         (
             "axe",
-            ["bane_of_arthropods", "efficiency", "fortune", "sharpness", "silk_touch", "smite"],
+            [
+                "bane_of_arthropods",
+                "efficiency",
+                "fortune",
+                "sharpness",
+                "silk_touch",
+                "smite",
+            ],
         ),
         ("boots", ["depth_strider", "feather_falling", "frost_walker"]),
         ("bow", ["flame", "infinity", "power", "punch"]),
         ("chestplate", ["vanishing_curse", "mending", "unbreaking"]),
         ("crossbow", ["multishot", "piercing", "quick_charge"]),
-        ("fishing_rod", ["vanishing_curse", "luck_of_the_sea", "lure", "mending", "unbreaking"]),
+        (
+            "fishing_rod",
+            ["vanishing_curse", "luck_of_the_sea", "lure", "mending", "unbreaking"],
+        ),
         ("helmet", ["aqua_affinity", "respiration"]),
         (
             "pickaxe",
-            ["vanishing_curse", "efficiency", "fortune", "mending", "silk_touch", "unbreaking"],
+            [
+                "vanishing_curse",
+                "efficiency",
+                "fortune",
+                "mending",
+                "silk_touch",
+                "unbreaking",
+            ],
         ),
         ("shovel", ["efficiency", "fortune", "silk_touch"]),
         (
@@ -232,9 +260,15 @@ def test_gen_items(coders_dataset, item, expected):
             "axe",
             "Axe: \n  [5] bane_of_arthropods\n  [5] efficiency\n  [3] fortune\n  [5] sharpness\n  [1] silk_touch\n  [5] smite",
         ),
-        ("boots", "Boots: \n  [3] depth_strider\n  [4] feather_falling\n  [2] frost_walker"),
+        (
+            "boots",
+            "Boots: \n  [3] depth_strider\n  [4] feather_falling\n  [2] frost_walker",
+        ),
         ("bow", "Bow: \n  [1] flame\n  [1] infinity\n  [5] power\n  [2] punch"),
-        ("chestplate", "Chestplate: \n  [1] mending\n  [3] unbreaking\n  [1] vanishing_curse"),
+        (
+            "chestplate",
+            "Chestplate: \n  [1] mending\n  [3] unbreaking\n  [1] vanishing_curse",
+        ),
         ("crossbow", "Crossbow: \n  [1] multishot\n  [4] piercing\n  [3] quick_charge"),
         (
             "fishing_rod",
@@ -250,7 +284,10 @@ def test_gen_items(coders_dataset, item, expected):
             "sword",
             "Sword: \n  [5] bane_of_arthropods\n  [2] fire_aspect\n  [2] knockback\n  [3] looting\n  [1] mending\n  [5] sharpness\n  [5] smite\n  [3] sweeping\n  [3] unbreaking\n  [1] vanishing_curse",
         ),
-        ("trident", "Trident: \n  [1] channeling\n  [5] impaling\n  [3] loyalty\n  [3] riptide"),
+        (
+            "trident",
+            "Trident: \n  [1] channeling\n  [5] impaling\n  [3] loyalty\n  [3] riptide",
+        ),
     ],
 )
 def test_item_print(coders_dataset, item, expected, capfd):

@@ -1,5 +1,5 @@
-names = 'Julian Bob PyBites Dante Martin Rodolfo'.split()
-countries = 'Australia Spain Global Argentina USA Mexico'.split()
+names = "Julian Bob PyBites Dante Martin Rodolfo".split()
+countries = "Australia Spain Global Argentina USA Mexico".split()
 
 
 def enumerate_names_countries():
@@ -11,5 +11,5 @@ def enumerate_names_countries():
        5. Martin     USA
        6. Rodolfo    Mexico"""
     for index, (name, country) in enumerate(zip(names, countries)):
-        spaces = ' ' * (10 - len(name))
+        spaces = " " * (10 - len(name))
         print(f"{index+1}. {name}{spaces} {country}")

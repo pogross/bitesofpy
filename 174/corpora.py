@@ -241,7 +241,9 @@ class Corpora:
 
         :return: List of tuples, i.e. ("word", count)
         """
-        counter = Counter([word for word in self.cleaned.split() if word not in self.stopwords])
+        counter = Counter(
+            [word for word in self.cleaned.split() if word not in self.stopwords]
+        )
         return counter.most_common(self.count)
 
     @property

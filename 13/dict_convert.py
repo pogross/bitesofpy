@@ -15,6 +15,7 @@ blog = dict(
 # define namedtuple here
 Blog = namedtuple("Blog", list(blog.keys()))
 
+
 def dict2nt(dict_):
     return Blog(**dict_)
 

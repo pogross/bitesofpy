@@ -22,12 +22,17 @@ def get_most_complex_bites(N: int = 10, stats: Path = stats) -> List[int]:
 
     # regex: 1) number preeceded by a dot / 2) all chars between semicolon and line end
     bite_ratings = [
-        (int(re.search(r"(\d*)\.", line).group(1)), float(re.search(r";(.*?)$", line).group(1)))
+        (
+            int(re.search(r"(\d*)\.", line).group(1)),
+            float(re.search(r";(.*?)$", line).group(1)),
+        )
         for line in lines[1:]  # skip header
         if "None" not in line  # skip None
     ]
 
-    bite_nr_sorted = [bite[0] for bite in sorted(bite_ratings, key=lambda x: x[1], reverse=True)]
+    bite_nr_sorted = [
+        bite[0] for bite in sorted(bite_ratings, key=lambda x: x[1], reverse=True)
+    ]
 
     return bite_nr_sorted[:N]
 

@@ -35,4 +35,3 @@ def test_different_output():
 
 def test_yet_another_output():
     assert calc_max_uptime(MAC3) == (24, "2019-12-11")
-

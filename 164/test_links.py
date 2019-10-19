@@ -48,7 +48,10 @@ def test_make_html_links_second_data_set(my_file):
     lines = [
         b"bogus data, again",
         b"https://codechalleng.es/bites/ , Bites of Py",
-        (b"https://stackoverflow.com/a/12927564,How to capture" b" subprocess.call stdout"),
+        (
+            b"https://stackoverflow.com/a/12927564,How to capture"
+            b" subprocess.call stdout"
+        ),
         b"https://pybit.es/,Our labor of love",
         b"https://pybit.es/pages/about.html, About Us",
         b"https://nu.nl, Dutch news site",

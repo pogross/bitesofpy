@@ -32,7 +32,11 @@ def get_industry_cap(industry: str) -> float:
     """Return the sum of all cap values for given industry, use
        the _cap_str_to_mln_float to parse the cap values,
        return a float with 2 digit precision"""
-    caps = [_cap_str_to_mln_float(entry["cap"]) for entry in data if entry["industry"] == industry]
+    caps = [
+        _cap_str_to_mln_float(entry["cap"])
+        for entry in data
+        if entry["industry"] == industry
+    ]
     return round(sum(caps), 2)
 
 

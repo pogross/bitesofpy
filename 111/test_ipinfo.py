@@ -36,4 +36,3 @@ def test_ipinfo_japan_ip(mockget):
         content=content, text=content.decode("utf-8"), json=lambda: json.loads(content)
     )
     assert get_ip_country("185.161.200.10") == "JP"
-

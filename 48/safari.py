@@ -22,4 +22,5 @@ def create_chart():
     for day, books in sorted(chart.items()):
         print(f"{day} {books}")
 
+
 create_chart()

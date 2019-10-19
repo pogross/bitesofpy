@@ -21,4 +21,3 @@ DIFF_FILL = "x"
 )
 def test_prefill_with_character(value, len_, fill, result):
     assert prefill_with_character(value, column_length=len_, fill_char=fill) == result
-

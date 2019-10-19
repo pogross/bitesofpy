@@ -3,7 +3,8 @@ import pytest
 from game import get_winner
 
 PLAYERS = (
-    "Rock Gun Lightning Devil Dragon Water Air Paper Sponge " "Wolf Tree Human Snake Scissors Fire"
+    "Rock Gun Lightning Devil Dragon Water Air Paper Sponge "
+    "Wolf Tree Human Snake Scissors Fire"
 ).split()
 
 
@@ -39,7 +40,9 @@ def test_fire_melts_scissors():
     assert get_winner("Fire", "Scissors") == "Fire"
 
 
-@pytest.mark.parametrize("player", ["Paper", "Snake", "Human", "Tree", "Wolf", "Sponge"])
+@pytest.mark.parametrize(
+    "player", ["Paper", "Snake", "Human", "Tree", "Wolf", "Sponge"]
+)
 def test_fire_burns_paper_snake_human_tree_wolf_and_sponge(player):
     assert get_winner("Fire", player) == "Fire"
 

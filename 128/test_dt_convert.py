@@ -36,4 +36,3 @@ def test_convert_eu_to_us_date_invalid_month():
 def test_convert_eu_to_us_date_invalid_year():
     with pytest.raises(ValueError):
         convert_eu_to_us_date("11/13/year")
-

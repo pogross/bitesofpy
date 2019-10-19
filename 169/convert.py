@@ -14,4 +14,3 @@ def convert(value: float, fmt: str) -> float:
         return round(value * 0.39370079, 4)
     else:
         raise ValueError("Wrong format given!")
-

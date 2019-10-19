@@ -4,9 +4,7 @@ import re
 
 import requests
 
-MARVEL_CSV = (
-    "https://raw.githubusercontent.com/pybites/marvel_challenge/master/marvel-wikia-data.csv"
-)  # noqa E501
+MARVEL_CSV = "https://raw.githubusercontent.com/pybites/marvel_challenge/master/marvel-wikia-data.csv"  # noqa E501
 
 Character = namedtuple("Character", "pid name sid align sex appearances year")
 

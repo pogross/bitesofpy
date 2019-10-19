@@ -37,5 +37,8 @@ class Planet:
     def mass(self):
         scale_factor = random()
         sleep(self.TEMPORAL_SHIFT)
-        self._mass = f"{round(scale_factor * self.GRAVITY_CONSTANT, 4)} " f"{self.SOLAR_MASS_UNITS}"
+        self._mass = (
+            f"{round(scale_factor * self.GRAVITY_CONSTANT, 4)} "
+            f"{self.SOLAR_MASS_UNITS}"
+        )
         return self._mass

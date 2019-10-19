@@ -27,4 +27,6 @@ def test_book_image():
 
 
 def test_book_link():
-    assert book.link == "/application-development/mastering-typescript-second-edition"  # noqa E501
+    assert (
+        book.link == "/application-development/mastering-typescript-second-edition"
+    )  # noqa E501

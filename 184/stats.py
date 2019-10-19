@@ -50,5 +50,7 @@ class BiteStats:
     @property
     def top_user_by_bites_completed(self) -> str:
         """Get the user that completed the most Bites"""
-        counter = Counter([row["user"] for row in self.rows if row["completed"] == "True"])
+        counter = Counter(
+            [row["user"] for row in self.rows if row["completed"] == "True"]
+        )
         return counter.most_common(1)[0][0]

@@ -1,4 +1,9 @@
-from cars import get_all_jeeps, get_first_model_each_manufacturer, get_all_matching_models, sort_car_models
+from cars import (
+    get_all_jeeps,
+    get_first_model_each_manufacturer,
+    get_all_matching_models,
+    sort_car_models,
+)
 
 
 def test_get_all_jeeps():

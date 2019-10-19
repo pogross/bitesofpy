@@ -22,8 +22,16 @@ def top_python_questions(url=cached_so_url):
     for summary in soup.findAll("div", {"class": "question-summary"}):
         text = summary.findAll("a", {"class": "question-hyperlink"})[0].text.strip()
         votes = summary.findAll("span", {"class": "vote-count-post"})[0].text.strip()
-        views = summary.findAll("div", {"class": "views"})[0].text.strip().replace(" views", "")
+        views = (
+            summary.findAll("div", {"class": "views"})[0]
+            .text.strip()
+            .replace(" views", "")
+        )
         questions.append(Question(text, votes, views))
 
-    filtered_questions = [(question.text, int(question.votes)) for question in questions if "m" in question.views]
+    filtered_questions = [
+        (question.text, int(question.votes))
+        for question in questions
+        if "m" in question.views
+    ]
     return sorted(filtered_questions, key=lambda x: x[1], reverse=True)

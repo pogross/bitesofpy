@@ -41,7 +41,9 @@ def high_low_record_breakers_for_2015() -> Tuple[STATION, STATION]:
 
     df = df[~((df.Date.dt.month == 2) & (df.Date.dt.day == 29))]
 
-    df = df.pivot_table(index=["ID", "Date"], columns="Element", values="Data_Value", dropna=True)
+    df = df.pivot_table(
+        index=["ID", "Date"], columns="Element", values="Data_Value", dropna=True
+    )
     df.reset_index(inplace=True)
 
     df_2014 = df[(df.Date.dt.year >= 2005) & (df.Date.dt.year <= 2014)].copy()
@@ -59,17 +61,23 @@ def high_low_record_breakers_for_2015() -> Tuple[STATION, STATION]:
         if row.TMAX < comp.TMAX.max():
             max_row = comp.loc[comp["TMAX"].idxmax()]
             max_record_breakers.add(
-                STATION(ID=max_row["ID"], Date=max_row["Date"].date(), Value=max_row["TMAX"])
+                STATION(
+                    ID=max_row["ID"], Date=max_row["Date"].date(), Value=max_row["TMAX"]
+                )
             )
 
         if comp.TMIN.min() < row.TMIN:
             min_row = comp.loc[comp["TMIN"].idxmin()]
             min_record_breakers.add(
-                STATION(ID=min_row["ID"], Date=min_row["Date"].date(), Value=min_row["TMIN"])
+                STATION(
+                    ID=min_row["ID"], Date=min_row["Date"].date(), Value=min_row["TMIN"]
+                )
             )
 
     min_record = sorted(list(min_record_breakers), key=lambda x: x.Value)[0]
-    max_record = sorted(list(max_record_breakers), key=lambda x: x.Value, reverse=True)[0]
+    max_record = sorted(list(max_record_breakers), key=lambda x: x.Value, reverse=True)[
+        0
+    ]
 
     return max_record, min_record
 

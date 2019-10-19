@@ -18,8 +18,14 @@ from control_flow import filter_names
         (["tim", "1quinton", "ana"], ["tim", "ana"]),
         (["t2im", "1quinton", "ana"], ["ana"]),
         (["t2im", "1quinton", "a3na", "4"], []),
-        (["tim", "amber", "ana", "cindy", "sara", "molly", "henry"], ["tim", "amber", "ana", "cindy", "sara"]),
-        (["tim", "amber", "ana", "c1ndy", "sara", "molly", "henry"], ["tim", "amber", "ana", "sara", "molly"]),
+        (
+            ["tim", "amber", "ana", "cindy", "sara", "molly", "henry"],
+            ["tim", "amber", "ana", "cindy", "sara"],
+        ),
+        (
+            ["tim", "amber", "ana", "c1ndy", "sara", "molly", "henry"],
+            ["tim", "amber", "ana", "sara", "molly"],
+        ),
     ],
 )
 def test_filter_names(names, expected_return):

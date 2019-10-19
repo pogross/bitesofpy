@@ -1,4 +1,8 @@
-from regex import extract_course_times, get_all_hashtags_and_links, match_first_paragraph
+from regex import (
+    extract_course_times,
+    get_all_hashtags_and_links,
+    match_first_paragraph,
+)
 
 
 def test_extract_course_times():

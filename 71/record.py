@@ -1,4 +1,4 @@
-class RecordScore():
+class RecordScore:
     """Class to track a game's maximum score"""
 
     def __init__(self):

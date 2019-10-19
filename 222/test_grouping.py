@@ -21,7 +21,15 @@ def test_different_iterable_size():
     iterable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] * 2
     n = 3
     actual = group(iterable, n)
-    expected = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10]]
+    expected = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [10, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [9, 10],
+    ]
     assert actual == expected
 
 

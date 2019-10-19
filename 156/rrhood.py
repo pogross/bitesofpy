@@ -50,7 +50,9 @@ Little Red Riding Hood and her Grandmother had a nice lunch and a long chat.
 """
 
 
-def make_character_index(text: str = text, characters: list = CHARACTERS) -> Dict[str, list]:
+def make_character_index(
+    text: str = text, characters: list = CHARACTERS
+) -> Dict[str, list]:
     """Return a dict with keys are characters (lowercased) and values
        the lines they appear in sorted order.
        Matches should be case insensitive.
