@@ -27,4 +27,3 @@ def test_find_no_match(capfd):
     find_emoji("awesome")
     output = capfd.readouterr()[0].lower()
     assert not output.strip() or "no matches" in output.lower()
-
